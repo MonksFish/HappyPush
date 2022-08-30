@@ -1,2 +1,1 @@
-# HappyPush
-一群程序员的浪漫推送
+# HappyPush 源码
