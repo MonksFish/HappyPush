@@ -1,0 +1,12 @@
+server:
+  port: 80
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: happypush
+
+showdb:
+  enable: false
+
