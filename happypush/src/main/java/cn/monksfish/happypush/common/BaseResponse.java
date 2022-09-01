@@ -7,6 +7,7 @@ import lombok.experimental.Accessors;
 
 /**
  * 全局返回对象
+ * @param <T>
  */
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,7 +31,7 @@ public class BaseResponse<T> {
      */
     private T data;
 
-    public BaseResponse(OperateEnum operateEnum){
+    public BaseResponse(OperateEnum operateEnum) {
         this.code = operateEnum.getCode();
         this.message = operateEnum.getMessage();
     }

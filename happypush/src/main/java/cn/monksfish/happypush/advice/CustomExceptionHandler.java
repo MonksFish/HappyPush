@@ -39,6 +39,7 @@ public class CustomExceptionHandler {
     @ExceptionHandler(Exception.class)
     public BaseResponse<Object> handleException(Exception ex) {
         log.error("系统异常，异常信息：", ex);
-        return BaseResponseUtil.fail(SystemExceptionEnum.SYS_EXCEPTION.getExceptionCode(), SystemExceptionEnum.SYS_EXCEPTION.getExceptionMsg());
+        return BaseResponseUtil.fail(SystemExceptionEnum.SYS_EXCEPTION.getExceptionCode(),
+                SystemExceptionEnum.SYS_EXCEPTION.getExceptionMsg());
     }
 }

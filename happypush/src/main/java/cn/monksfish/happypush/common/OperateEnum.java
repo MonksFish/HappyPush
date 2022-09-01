@@ -24,7 +24,7 @@ public enum OperateEnum {
         return message;
     }
 
-    private OperateEnum(String code, String message) {
+    OperateEnum(String code, String message) {
         this.code = code;
         this.message = message;
     }
