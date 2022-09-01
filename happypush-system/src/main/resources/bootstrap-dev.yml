@@ -14,7 +14,7 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: xxxx
+        server-addr: xxx
         group: DEFAULT_GROUP
         file-extension: yml
         prefix: ${spring.application.name}-${spring.profiles.active}
