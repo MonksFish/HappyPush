@@ -1,7 +1,5 @@
 package cn.monksfish.happypush.exception;
 
-import cn.monksfish.happypush.exception.ExceptionInterface;
-
 public enum SystemExceptionEnum implements ExceptionInterface {
     PARAMETER_EXCEPTION("V0001", "参数校验异常"),
 
