@@ -12,8 +12,15 @@ import java.util.function.Function;
 public class TimeUtils {
 
     public static final DateTimeFormatter DEFAULT_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-    private static LocalDateTime START = LocalDateTime.parse("2022-08-31 12:00:10", DEFAULT_FORMATTER);
-    private static LocalDateTime TARGET = LocalDateTime.parse("2022-08-31 20:00:00", DEFAULT_FORMATTER);
+
+    @Getter
+    @AllArgsConstructor
+    public enum TimingType {
+        TIMING(TimeUtils::howLongTillNow),
+        COUNT_DOWN(TimeUtils::howLongArrive);
+
+        private Function<LocalDateTime, String> functionConvert;
+    }
 
     /**
      * 时间枚举-保存将要展示的时间单位粒度
@@ -58,7 +65,7 @@ public class TimeUtils {
      * @param left  较小的时间
      * @param right 较大的时间
      */
-    public static String calTime(LocalDateTime left, LocalDateTime right) {
+    private static String calTime(LocalDateTime left, LocalDateTime right) {
         StringBuilder res = new StringBuilder();
         Duration duration;
         for (Time e : Time.values()) {
@@ -71,6 +78,8 @@ public class TimeUtils {
     }
 
     public static void main(String[] args) {
+        LocalDateTime START = LocalDateTime.parse("2022-08-31 12:00:10", DEFAULT_FORMATTER);
+        LocalDateTime TARGET = LocalDateTime.parse("2022-08-31 20:00:00", DEFAULT_FORMATTER);
         System.out.println(howLongTillNow(START));
         System.out.println(howLongArrive(TARGET));
     }
