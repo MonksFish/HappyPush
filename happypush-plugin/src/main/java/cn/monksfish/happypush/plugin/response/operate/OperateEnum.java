@@ -1,4 +1,4 @@
-package cn.monksfish.happypush.common;
+package cn.monksfish.happypush.plugin.response.operate;
 
 /**
  * 操作状态枚举
@@ -7,10 +7,31 @@ package cn.monksfish.happypush.common;
  */
 public enum OperateEnum {
 
+    /**
+     * 新增成功
+     */
     ADD_SUCCESS("00000", "新增成功"),
+
+    /**
+     * 修改成功
+     */
     UPDATE_SUCCESS("00000", "修改成功"),
+
+    /**
+     * 删除成功
+     */
     DEL_SUCCESS("00000", "删除成功"),
+
+
+    /**
+     * 操作成功
+     */
     OPERATE_SUCCESS("00000", "操作成功"),
+
+
+    /**
+     * 操作失败
+     */
     OPERATE_FAIL("E0001", "操作失败");
 
     private final String code;

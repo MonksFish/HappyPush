@@ -1,4 +1,5 @@
-package cn.monksfish.happypush.util;
+package cn.monksfish.happypush.plugin.util;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

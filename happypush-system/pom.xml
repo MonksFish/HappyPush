@@ -18,6 +18,21 @@
             <artifactId>happypush-dependency</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
+        <!-- happypush api -->
+        <dependency>
+            <groupId>cn.monksfish</groupId>
+            <artifactId>happypush-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <!-- happypush plugin -->
+        <dependency>
+            <groupId>cn.monksfish</groupId>
+            <artifactId>happypush-plugin</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 

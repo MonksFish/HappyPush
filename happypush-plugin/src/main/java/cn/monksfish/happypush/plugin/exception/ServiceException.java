@@ -1,4 +1,4 @@
-package cn.monksfish.happypush.exception;
+package cn.monksfish.happypush.plugin.exception;
 
 public class ServiceException extends RuntimeException {
     private final String errorCode;
