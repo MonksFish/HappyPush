@@ -23,6 +23,7 @@
         <module>happypush-monitor</module>
         <module>happypush-api</module>
         <module>happypush-push</module>
+        <module>happypush-plugin</module>
     </modules>
 
 </project>

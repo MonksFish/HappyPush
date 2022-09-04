@@ -16,7 +16,8 @@
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
-        <spring-cloud-alibaba.version>2.2.7.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud-alibaba.vnaersion>2.2.7.RELEASE</spring-cloud-alibaba.vnaersion>
+        <nacos.version>2.1.1.RELEASE</nacos.version>
         <showdb.version>1.0.1</showdb.version>
         <mybatis.version>3.5.2</mybatis.version>
         <redisson.version>3.17.6</redisson.version>
@@ -62,7 +63,7 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-            <version>${spring-cloud-alibaba.version}</version>
+            <version>${nacos.version}</version>
         </dependency>
         <!--WEB环境-->
         <dependency>
