@@ -17,7 +17,6 @@ import org.springframework.util.StringUtils;
  */
 @Configuration
 public class CacheManagerConfiguration {
-
     /**
      * 注入Redission
      * @param url redis地址
@@ -39,7 +38,7 @@ public class CacheManagerConfiguration {
      * @param redissonClient redissonClient
      * @return 缓存管理器
      */
-    @Bean
+    @Bean("redisCacheManager")
     CacheManager cacheManager(RedissonClient redissonClient) {
         return new RedissonSpringCacheManager(redissonClient);
     }
