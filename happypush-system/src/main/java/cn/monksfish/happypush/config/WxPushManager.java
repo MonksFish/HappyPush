@@ -35,20 +35,15 @@ import java.util.List;
  */
 @Configuration
 public class WxPushManager {
-    @Value(value = "${wxconf.appid}")
-    private String appId;
-
-    @Value(value = "${wxconf.appsecret}")
-    private String appSecret;
-
     @Autowired
     @Qualifier("redissonClient")
-    RedissonClient redissonClient;
+    private RedissonClient redissonClient;
 
     @Bean("WX")
     @DependsOn("redissonClient")
-    public WxMpService wxMpImpl() throws WxErrorException {
-        WxMpDefaultConfigImpl wxMpRedissonConfig = new WxMpRedissonConfigImpl(redissonClient);
+    public WxMpService wxMpImpl(@Value(value = "${wxconf.appid}") String appId,
+                                @Value(value = "${wxconf.appsecret}") String appSecret) throws WxErrorException {
+        WxMpDefaultConfigImpl wxMpRedissonConfig = new WxMpRedissonConfigImpl(redissonClient, "wx:config");
         wxMpRedissonConfig.setAppId(appId);
         wxMpRedissonConfig.setSecret(appSecret);
         WxMpService wxMpService = new WxMpServiceImpl();
@@ -58,7 +53,7 @@ public class WxPushManager {
         List<WxMpTemplate> allPrivateTemplate = templateMsgService.getAllPrivateTemplate();
         // 星标用户service
         List<WxUserTag> wxUserTags = wxMpService.getUserTagService().tagGet();
-        List<String> openIds =  new ArrayList<>();
+        List<String> openIds = new ArrayList<>();
         openIds.add("oJxVR6ezM9VBbHisXFiHWXVPeRD0");
         WxMpUserQuery wxMpUserQuery = new WxMpUserQuery(openIds);
         //关注用户service
@@ -72,5 +67,11 @@ public class WxPushManager {
             }
         });
         return wxMpService;
+    }
+
+    @Bean("wxMpUserService")
+    @DependsOn("WX")
+    public WxMpUserService wxMpUserService(WxMpService wxMpService) {
+        return wxMpService.getUserService();
     }
 }
