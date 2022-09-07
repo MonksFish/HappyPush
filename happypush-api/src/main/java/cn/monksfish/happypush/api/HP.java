@@ -14,7 +14,7 @@ import java.util.Objects;
  * @description Happypush系统远程调用客户端
  * @date 2022/9/2 10:23 上午
  */
-public class HPClient {
+public class HP {
 
     public static PushFactory push = FactoryContext.pushFactory;
 

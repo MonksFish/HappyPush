@@ -12,6 +12,7 @@
     <artifactId>happypush-system</artifactId>
 
     <dependencies>
+
         <!-- 引入happypush项目所需依赖 -->
         <dependency>
             <groupId>cn.monksfish</groupId>
