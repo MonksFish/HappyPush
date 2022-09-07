@@ -20,7 +20,7 @@ public class CacheManagerConfiguration {
     /**
      * 注入Redission
      * @param url redis地址
-     * @return
+     * @return RedissonClient
      */
     @Bean("redissonClient")
     RedissonClient redisson(@Value("${redis.url}") String url,

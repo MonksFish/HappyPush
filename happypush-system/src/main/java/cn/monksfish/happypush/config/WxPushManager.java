@@ -43,7 +43,7 @@ public class WxPushManager {
     @DependsOn("redissonClient")
     public WxMpService wxMpImpl(@Value(value = "${wxconf.appid}") String appId,
                                 @Value(value = "${wxconf.appsecret}") String appSecret) throws WxErrorException {
-        WxMpDefaultConfigImpl wxMpRedissonConfig = new WxMpRedissonConfigImpl(redissonClient);
+        WxMpDefaultConfigImpl wxMpRedissonConfig = new WxMpRedissonConfigImpl(redissonClient, "wx:config");
         wxMpRedissonConfig.setAppId(appId);
         wxMpRedissonConfig.setSecret(appSecret);
         WxMpService wxMpService = new WxMpServiceImpl();

@@ -26,7 +26,7 @@ public class BaseDataServiceImpl implements BaseDataService {
      * @return 返回 openId 列表 并且加入缓存
      * @throws WxErrorException
      */
-    @Cacheable(cacheManager = "redisCacheManager", cacheNames = "wxOpenIds", unless = "#result.size()==0")
+    @Cacheable(cacheManager = "redisCacheManager", cacheNames = "wxOpenIds")
     public List<String> wxOpenIds() throws WxErrorException {
         WxMpUserList wxMpUserList = wxMpUserService.userList(null);
         List<String> allOpenIds = new ArrayList<>(wxMpUserList.getOpenids());

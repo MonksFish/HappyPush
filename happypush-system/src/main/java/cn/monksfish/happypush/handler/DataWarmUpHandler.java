@@ -7,6 +7,7 @@ import me.chanjar.weixin.mp.bean.result.WxMpUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,24 +22,11 @@ import java.util.stream.Collectors;
  * @create 2022-05-05-11:45
  */
 @Service
-public class DataWarmUpHandler implements ApplicationRunner {
+public class DataWarmUpHandler implements CommandLineRunner {
     @Autowired
     private WxMpUserService wxMpUserService;
     @Autowired
     private BaseDataService baseDataService;
-
-    /**
-     * 项目启动后，数据预热，刷新等操作
-     * @param args ApplicationArguments
-     * @throws Exception
-     */
-    @Override
-    public void run(ApplicationArguments args) throws Exception {
-        // 预热进redis
-        List<String> openIds = baseDataService.wxOpenIds();
-        persistenceDB(openIds);
-    }
-
 
     /**
      * 异步更新数据库信息
@@ -51,5 +39,17 @@ public class DataWarmUpHandler implements ApplicationRunner {
         List<WxMpUser> wxMpUsers = wxMpUserService.userInfoList(allOpenIds);
         Map<String, WxMpUser> openIdMapUserInfo = wxMpUsers.stream().collect(Collectors.toMap(WxMpUser::getOpenId, Function.identity()));
         // TODO
+    }
+
+    /**
+     * 项目启动后，数据预热，刷新等操作
+     * @param args ApplicationArguments
+     * @throws Exception
+     */
+    @Override
+    public void run(String... args) throws Exception {
+        // 预热进redis
+        List<String> openIds = baseDataService.wxOpenIds();
+        persistenceDB(openIds);
     }
 }
