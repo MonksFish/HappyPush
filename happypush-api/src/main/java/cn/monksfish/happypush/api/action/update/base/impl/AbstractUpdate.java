@@ -22,9 +22,9 @@ public abstract class AbstractUpdate<T extends BaseTO, C extends Client, M exten
     public RpcResultTO<T> save() {
         // 预留的一个扩展点，可以在这里做一些特定的操作, 比如在模型中设置特定字段, 做特殊处理
         beforeSave();
-        // 借助SPI机制的原因：因为方法调用可以分为本地调用和远程调用，远程调用又根据不同的框架有不同的调用方式，所以通过SPI的配置来做不同的处理
         try {
             // 通过反射找到client那一层的方法调用，在client那一层借助策略和SPI机制去真正发起调用
+            // 借助SPI机制的原因：因为方法调用可以分为本地调用和远程调用，远程调用又根据不同的框架有不同的调用方式，所以通过SPI的配置来做不同的处理
             return (RpcResultTO<T>) ReflectionUtil.invoke(getClient(), getUpdateModel().getMethodName(), getUpdateModel());
         } catch (InvocationTargetException | IllegalAccessException e) {
             e.printStackTrace();

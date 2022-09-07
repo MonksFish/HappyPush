@@ -6,10 +6,6 @@ import cn.monksfish.happypush.api.action.update.base.impl.AbstractUpdate;
 import cn.monksfish.happypush.api.client.impl.PushClient;
 import cn.monksfish.happypush.api.model.mo.push.PushMO;
 import cn.monksfish.happypush.api.model.to.push.PushTO;
-import org.jetbrains.annotations.NotNull;
-import org.springframework.beans.BeansException;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 
 /**
  * @author 小沙弥

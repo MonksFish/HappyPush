@@ -1,7 +1,6 @@
 package cn.monksfish.happypush.plugin.util;
 
 import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.DefaultParameterNameDiscoverer;
 
 import java.lang.reflect.Field;
@@ -96,9 +95,6 @@ public class ReflectionUtil {
         }
         return null;
     }
-
-
-
 
     /**
      * 把一个对象转换成Map

@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class PushClient implements Client {
 
-
     /**
      * 消息推送
      * @param pushMO 消息推送入参模型
