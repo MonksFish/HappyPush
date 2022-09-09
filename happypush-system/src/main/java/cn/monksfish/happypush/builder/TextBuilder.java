@@ -6,7 +6,7 @@ import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutTextMessage;
 
 /**
- * @author <a href="https://github.com/binarywang">Binary Wang</a>
+ * @author yan_wenjie
  */
 public class TextBuilder extends AbstractBuilder {
 

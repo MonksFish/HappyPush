@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 /**
- * @author <a href="https://github.com/binarywang">Binary Wang</a>
+ * @author yan_wenjie
  */
 public class JsonUtils {
     public static String toJson(Object obj) {

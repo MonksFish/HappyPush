@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.Map;
 
 /**
- * @author <a href="https://github.com/binarywang">Binary Wang</a>
+ * @author yan_wenjie
  */
 @Component
 public class KfSessionHandler extends AbstractHandler {

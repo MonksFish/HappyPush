@@ -12,7 +12,7 @@ import java.util.Map;
 import static me.chanjar.weixin.common.api.WxConsts.XmlMsgType;
 
 /**
- * @author <a href="https://github.com/binarywang">Binary Wang</a>
+ * @author yan_wenjie
  */
 @Component
 public class LocationHandler extends AbstractHandler {

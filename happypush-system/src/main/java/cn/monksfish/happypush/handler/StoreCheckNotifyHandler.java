@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * 门店审核事件处理
  *
- * @author <a href="https://github.com/binarywang">Binary Wang</a>
+ * @author yan_wenjie
  */
 @Component
 public class StoreCheckNotifyHandler extends AbstractHandler {
