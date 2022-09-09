@@ -1,5 +1,6 @@
-package cn.monksfish.happypush;
+package cn.monksfish.test.api;
 
+import cn.monksfish.test.EmptyTestApplication;
 import cn.monksfish.happypush.api.HP;
 import cn.monksfish.happypush.api.action.ContainerAction;
 import cn.monksfish.happypush.api.client.impl.PushClient;
@@ -19,7 +20,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @RunWith(SpringRunner.class)
 // 单元测试空的环境，具体需要加载哪些bean和组件使用Import导入
-@SpringBootEmptyEnv(classes = HappypushApplication.class)
+@SpringBootEmptyEnv(classes = EmptyTestApplication.class)
 @Import({FactoryContext.class, PushFactoryImpl.class, ContainerAction.class, PushClient.class})
 public class ApiTest {
 
