@@ -5,8 +5,6 @@ import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.mp.api.WxMpUserService;
 import me.chanjar.weixin.mp.bean.result.WxMpUser;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
@@ -38,7 +36,6 @@ public class DataWarmUpHandler implements CommandLineRunner {
         // 用户信息进行入库
         List<WxMpUser> wxMpUsers = wxMpUserService.userInfoList(allOpenIds);
         Map<String, WxMpUser> openIdMapUserInfo = wxMpUsers.stream().collect(Collectors.toMap(WxMpUser::getOpenId, Function.identity()));
-        // TODO
     }
 
     /**
